@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class PetsTableSeeder extends Seeder
 {
@@ -11,16 +12,12 @@ class PetsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('pets')->insert([
-            'name' => 'molly'
-        ]);
-        
-        DB::table('pets')->insert([
-            'name' => 'bertrand'
-        ]);
+        $faker = Faker::create();
 
-        DB::table('pets')->insert([
-            'name' => 'olgar'
-        ]);
+    	foreach (range(1, 37) as $index) {
+	        DB::table('pets')->insert([
+	            'name' => $faker->name
+	        ]);
+        }
     }
 }
