@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Pet extends Model
-{
-    $fillable = ['name'];
+class Pet extends Model {
+
+    protected $fillable = ['name'];
 }
